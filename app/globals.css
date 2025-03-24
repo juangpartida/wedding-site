@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 245, 240, 255;
+  --accent-color: #E6E6FA;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+.menu-section {
+  @apply mb-8;
+}
+
+.menu-section h3 {
+  @apply text-xl font-semibold mb-2;
+}
+
+.menu-item {
+  @apply mb-2;
+}
