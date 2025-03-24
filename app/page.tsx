@@ -8,6 +8,7 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import Video from "yet-another-react-lightbox/plugins/video";
+import type { Slide } from "yet-another-react-lightbox";
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('details');
@@ -45,22 +46,23 @@ export default function Home() {
     { type: 'video', file: 'juanandmeg' }
   ];
 
-  const slides = mediaFiles.map(media => {
+  const slides: Slide[] = mediaFiles.map(media => {
     if (media.type === 'video') {
       return {
-        type: 'video',
+        type: "video",
         width: 1280,
         height: 720,
         poster: `/gallery/${media.file}.jpg`,
         sources: [
           {
             src: `/gallery/${media.file}.mp4`,
-            type: 'video/mp4'
+            type: "video/mp4"
           }
         ]
       };
     }
     return {
+      type: "image",
       src: `/gallery/${media.file}.jpg`,
       alt: media.file,
     };
